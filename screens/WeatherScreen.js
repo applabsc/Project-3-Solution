@@ -19,7 +19,6 @@ export default class WeatherScreen extends Component {
 
     // Complete this function
     fetchWeatherData() {
-        console.log("Summitng", this.state.cityName);
         fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.cityName + "&APPID=" + this.API_KEY)
             .then((response) => {
                 return response.json();
@@ -39,13 +38,6 @@ export default class WeatherScreen extends Component {
                 })
             })
             .catch(error => console.log(error))
-        // Call the OpenWeather API
-        // The format of the API URL is (without the {})
-        // api.openweathermap.org/data/2.5/weather?q={city name}
-        // Take cityName from this.state then paste it into the API URL
-        // Call the URL and handle the response with promises & promise chaining
-        // Assign the relevant response parameters (i.e. temperature) in this.state
-        // replace "weather info goes here" with the temperature from this.state
     }
 
     render() {

@@ -36,13 +36,10 @@ export default createStackNavigator(
                         />
                     ),
                 }
-
-
             },
         }),
     },
     {
         initialRouteName: 'LoginScreen',
     }
-
 );
