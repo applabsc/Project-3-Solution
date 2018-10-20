@@ -12,16 +12,25 @@ export default class WeatherScreen extends Component {
         super(props);
         this.fetchWeatherData = this.fetchWeatherData.bind(this);
         this.API_KEY = "534695a9249e02707edde0c2485f4c3a";
+        this.state = {
+            cityName: null,
+        }
     }
 
-// Complete this function
+    // Complete this function
     fetchWeatherData() {
-        fetch('api.openweathermap.org/data/2.5/weather?q=' + this.state.cityName)
+        console.log("Summitng", this.state.cityName);
+        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.cityName + "&APPID=" + this.API_KEY)
             .then((response) => {
                 return response.json();
             })
             .then((jsonResponse) => {
                 console.log(jsonResponse);
+                const rawWeather = jsonResponse.weather[0].description;
+                const uppercaseWeather = rawWeather.charAt(0).toUpperCase() + rawWeather.substr(1);
+                this.setState({
+                    weather: uppercaseWeather,
+                })
             })
             .catch(error => console.log(error))
         // Call the OpenWeather API
@@ -38,7 +47,7 @@ export default class WeatherScreen extends Component {
             <View style={styles.container}>
 
                 <Text style={styles.header}>
-                    weather info goes here
+                    {this.state.weather}
                 </Text>
 
                 <Text style={styles.paragraph}>
@@ -47,10 +56,13 @@ export default class WeatherScreen extends Component {
 
                 <TextInput
                     style={styles.textfield}
-                    onChange={cityName => this.setState(cityName)}
+                    onChangeText={cityName => this.setState({cityName: cityName})}
                 />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={this.fetchWeatherData}
+                >
                     <Text style={styles.buttonText}>
                         Submit
                     </Text>
