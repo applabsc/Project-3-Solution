@@ -31,6 +31,9 @@ export default class ToDoList extends Component {
     };
 
     addTask = () => {
+        if (this.state.text == null) {
+            return;
+        }
         // If the input text field is empty, do nothing
         if (this.state.text.trim().length === 0) {
             return;
@@ -70,7 +73,7 @@ export default class ToDoList extends Component {
     componentDidMount() {
         Keyboard.addListener(
             isAndroid ? "keyboardDidShow" : "keyboardWillShow",
-            e => this.setState({ viewPadding: e.endCoordinates.height + viewPadding })
+            e => this.setState({ viewPadding: e.endCoordinates.height - 55 })
         );
 
         Keyboard.addListener(
