@@ -8,7 +8,7 @@ import {
     Image,
 } from 'react-native';
 
-export default class App extends Component {
+export default class LoginScreen extends Component {
     constructor(props) {
         // In the constructor, the superclass constructor must be called. This step is easy to forget.
         super(props);

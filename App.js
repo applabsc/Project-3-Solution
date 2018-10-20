@@ -1,21 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import { createStackNavigator } from 'react-navigation';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import LoginScreen from './screens/LoginScreen';
+import WeatherScreen from './screens/WeatherScreen';
+import ToDoList from './screens/ToDoList';
+
+export default createStackNavigator(
+    {
+        LoginScreen_: LoginScreen,
+        WeatherScreen_: WeatherScreen,
+        ToDoList_: ToDoList,
+    },
+    {
+        initialRouteName: 'LoginScreen',
+    }
+);
