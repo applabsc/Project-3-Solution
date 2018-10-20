@@ -17,7 +17,6 @@ export default class WeatherScreen extends Component {
         }
     }
 
-    // Complete this function
     fetchWeatherData() {
         fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.cityName + "&APPID=" + this.API_KEY)
             .then((response) => {

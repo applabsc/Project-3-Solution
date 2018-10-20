@@ -48,7 +48,6 @@ export default class ToDoList extends Component {
     };
 
     deleteTask = i => {
-        console.log("Deleting", i);
         this.setState(
             prevState => {
                 // New tasks is a DEEP COPY of prevState.tasks

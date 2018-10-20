@@ -18,6 +18,7 @@ export default class LoginScreen extends Component {
         this.onPressSubmit = this.onPressSubmit.bind(this);
     }
 
+    // Called when the submit button is pressed
     onPressSubmit() {
         this.props.navigation.navigate('ToDoList');
     }
