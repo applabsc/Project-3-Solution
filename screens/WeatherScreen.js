@@ -26,6 +26,12 @@ export default class WeatherScreen extends Component {
             })
             .then((jsonResponse) => {
                 console.log(jsonResponse);
+                if (jsonResponse.cod == 404) {
+                    this.setState({
+                        weather: "City not found",
+                    });
+                    return;
+                }
                 const rawWeather = jsonResponse.weather[0].description;
                 const uppercaseWeather = rawWeather.charAt(0).toUpperCase() + rawWeather.substr(1);
                 this.setState({
