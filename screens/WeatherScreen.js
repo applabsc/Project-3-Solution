@@ -60,3 +60,50 @@ export default class WeatherScreen extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 30,
+        backgroundColor: '#ecf0f1',
+    },
+    header: {
+        margin: 10,
+        fontSize: 36,
+        fontWeight: '300',
+        textAlign: 'center',
+        color: '#34495e',
+    },
+    paragraph: {
+        margin: 10,
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#34495e',
+    },
+    textfield: {
+        fontSize: 18,
+        fontFamily: 'Helvetica Neue',
+        height: 40,
+        width: '100%',
+        borderColor: '#4ABBEB',
+        borderWidth: 2,
+        borderRadius: 10,
+        marginBottom: 10,
+    },
+    button: {
+        height: 50,
+        width: '100%',
+        backgroundColor: '#4ABBEB',
+        borderRadius: 10,
+        justifyContent: 'center',
+    },
+    buttonText: {
+        color: 'white',
+        alignSelf: 'center',
+        fontSize: 20,
+        fontFamily: 'Helvetica Neue',
+    }
+});

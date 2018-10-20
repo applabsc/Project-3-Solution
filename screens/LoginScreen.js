@@ -19,7 +19,6 @@ export default class LoginScreen extends Component {
     }
 
     onPressSubmit() {
-        console.log("Name: ", this.state.username, " has been submitted!");
         this.props.navigation.navigate('ToDoList');
     }
 
@@ -32,7 +31,7 @@ export default class LoginScreen extends Component {
                         height: 120,
                         marginVertical: 50,
                     }}
-                    source={require('./AppLabLogo.png')}
+                    source={require('../AppLabLogo.png')}
                 />
 
                 <Text style={styles.text}>
