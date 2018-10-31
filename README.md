@@ -4,6 +4,8 @@ In this project we're going to incorporate what we've learned to build a combina
 
 For this project, using a third party library, [React Navigation](https://reactnavigation.org/en/), to handle navigation.
 
+![](https://s3-us-west-1.amazonaws.com/applab-sc/Curriculum/NavigationDemo.gif)
+
 ## Project Structure
 * The code for the three screens that we're going to be linking are all in the screens folder
 * App.js will hold the code that we'll write to handle navigation. For this project this is the only file that you'll need to edit.
